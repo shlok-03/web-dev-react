@@ -1,0 +1,71 @@
+.task-card {
+  background: var(--card-bg);
+  border: 1px solid var(--button-border);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.2s, opacity 0.2s;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.task-done {
+  opacity: 0.55;
+}
+
+.task-done h3 {
+  text-decoration: line-through;
+}
+
+.task-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.prio-text {
+  color: #e53e3e;
+}
+
+.task-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Priority colours */
+.badge-high   { background: #fed7d7; color: #c53030; }
+.badge-medium { background: #fefcbf; color: #975a16; }
+.badge-low    { background: #c6f6d5; color: #276749; }
+
+/* Status colours */
+.badge-done    { background: #bee3f8; color: #2b6cb0; }
+.badge-pending { background: #e9d8fd; color: #553c9a; }
+
+/* ── Label text ── */
+.label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.task-card p {
+  margin: 0;
+  font-size: 0.85rem;
+}
