@@ -55,10 +55,11 @@
   },
   {
     "id": 1776977482038,
-    "title": "New Task",
+    "title": "Complete React Project",
     "priority": "High",
-    "dueDate": "2026-04-23",
+    "dueDate": "2026-05-29",
     "completed": false,
-    "createdAt": "2026-04-23T20:51:22.038Z"
+    "createdAt": "2026-04-23T20:51:22.038Z",
+    "updatedAt": "2026-05-21T21:03:32.077Z"
   }
 ]

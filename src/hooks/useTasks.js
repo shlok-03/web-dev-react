@@ -105,6 +105,39 @@ export function useTasks() {
             setError("Failed to delete task: " + err.message);
         }).finally(() => setLoading(false));
 
+            dispatch({type: 'DELETE_TASK_ERROR', payload: "Failed to delete task: " + err.message});
+        });
+
+    };
+
+    const updateTask = (id, formData) => {
+       
+        if(formData.title.trim() === "") {
+            return;
+        }
+
+        const updatedTask = {
+            title: formData.title,
+            priority: formData.priority,
+            dueDate: formData.dueDate,
+        }
+
+        dispatch({ type: ActionType.UPDATE_TASK_START } );
+        fetch(`http://localhost:3000/tasks/${id}`, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updatedTask), 
+        }).then((repsonse) => {
+            if(!repsonse.ok)
+                throw new Error("Unable to update task");
+            return repsonse.json();
+        }).then((data) => {
+            dispatch({type: ActionType.UPDATE_TASK_SUCCESS, payload: data.task});
+        }).catch((err) => {
+            dispatch({type: ActionType.UPDATE_TASK_ERROR, payload: "Failed to update task: " + err.message});
+        });
     };
 
     return {
